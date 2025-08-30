@@ -9,14 +9,18 @@ class RAGPipeline:
 
     def run(self, prompt: PromptRequest)->PromptRequest:
     
-        retriever_result:list[str] = self.retriever.retrieve(prompt.prompt)
+        retriever_result:list[str] = self.retriever.retrieve(prompt.prompt, k = 3)
 
         if self.with_ranker:
             ranked_results:list[str] = self.ranker(retriever_result)
         else:
             ranked_results:list[str] = retriever_result
 
+        print("ranked_results", ranked_results)
+
         generator_prompt:PromptRequest = self.generator(prompt.prompt, ranked_results)
+
+        print("generator_prompt", generator_prompt)
 
         return generator_prompt
 
