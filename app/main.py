@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 import ollama
-from dto import PromptRequest
-from rag_pipeline import RAGPipeline
+
+from .dto import PromptRequest
+from .rag_pipeline import RAGPipeline
 
 api = FastAPI()
 
@@ -19,7 +20,7 @@ async def ask_with_rag(request: PromptRequest):
 
     # TODO: Implement RAG
 
-    rag_pipeline = RAGPipeline(index_path="data/faiss_index.bin", with_ranker=False)
+    rag_pipeline = RAGPipeline(index_path="data/faiss_index.bin", text_path="data/teste.txt", with_ranker=False)
 
     response_rag = rag_pipeline.run(request)
 

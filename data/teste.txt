@@ -1,0 +1,5 @@
+O RAG (Retrieval-Augmented Generation) é uma técnica que combina modelos de recuperação de informação com modelos de geração de linguagem. 
+Ele permite que um modelo de linguagem consulte documentos externos para melhorar a precisão das respostas. 
+O FAISS é uma biblioteca de busca vetorial muito utilizada para armazenar embeddings e realizar consultas rápidas. 
+Os embeddings transformam textos em vetores numéricos, permitindo que o modelo compare similaridades entre textos. 
+Essa abordagem é usada em diversos domínios, como jurídico, médico e científico, onde a precisão das informações é fundamental.
