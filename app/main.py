@@ -15,10 +15,8 @@ async def ask_ollama3(request: PromptRequest):
     return {"answer": response['message']['content']}
 
 
-@api.post("/ask_with_rag")
-async def ask_with_rag(request: PromptRequest):
-
-    # TODO: Implement RAG
+@api.post("/ask_ollama3_with_rag")
+async def ask_ollama3_with_rag(request: PromptRequest):
 
     rag_pipeline = RAGPipeline(index_path="data/faiss_index.bin", text_path="data/teste.txt", with_ranker=False)
 
