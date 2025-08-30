@@ -1,0 +1,6 @@
+fastapi
+faiss-cpu
+sentence-transformers
+uvicorn
+ollama
+requests
